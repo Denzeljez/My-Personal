@@ -1,0 +1,168 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.name-heading h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    margin: 20px 0;
+}
+
+.profile-page {
+    max-width: 900px;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.profile-image img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0px 4px 10px #603b0a;
+}
+
+.social-icons a {
+    color: #a87b5e;
+    font-size: 1.5rem;
+    margin: 0 10px;
+}
+
+/* Info Box Styling */
+.info-box {
+    background-color: #f4ece4; /* Light background for the info box */
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 4px 8px #603b0a;
+}
+
+.info-item {
+    width: 100%;
+    background-color: #e2c5a3; /* Different background color for each section */
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.info-item i {
+    color: #603b0a; /* Icon color */
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+/* Specific styling for text alignment within each info box section */
+.info-item p {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Social Icons Styling */
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: #603b0a; /* Icon color */
+    font-size: 1.5rem;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* Last item for the description with a distinct background */
+.info-item:last-child {
+    background-color: #c98f54; /* Darker background for the last info item */
+    color: #ffffff;
+}
+
+/* Feature Box Styling */
+.feature-box {
+    display: inline-block;
+    margin-top: 20px;
+    
+}
+
+.feature-box img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0px 4px 10px #603b0a;
+}
+
+.feature-box p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Center the feature boxes and align them horizontally */
+.feature-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+}
+/* Basic styling for Back to Profile button */
+.btn-back-to-profile {
+    background-color: #785317; /* Set button background color */
+    color: #ffffff;            /* Set button text color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;     /* Remove underline for link */
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;        /* Center text */
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the button */
+.btn-back-to-profile:hover {
+    background-color: #5a4211; /* Darken background color on hover */
+    color: #ffffff; /* Ensure the text stays white */
+}
+/* Assuming About Me, Gallery, and Contact have specific IDs */
+#aboutMe, #gallery, #contact {
+    color: #603b0a; /* New color */
+}
+
+/* Example if they are buttons or links */
+.btn-about, .btn-gallery, .btn-contact {
+    color: #603b0a; /* New color */
+}
+
+/* Directly targeting text if they are in <h2>, <h3>, or <p> */
+h2.about, h2.gallery, h2.contact {
+    color: #603b0a; /* New color */
+}
+.carousel-item img {
+    height: 60vh; /* Full viewport height */
+    width: auto; /* Maintain original aspect ratio */
+    object-fit: contain; /* Ensure the entire image is visible without cropping */
+    margin: 0 auto; /* Center the image if there is extra space */
+}
+/* Custom Button Color for Send Message */
+.btn-custom {
+    background-color: #603b0a; /* Apply the color #603b0a */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Padding for better button size */
+    font-size: 16px; /* Text size */
+    text-align: center; /* Center text */
+    display: inline-block;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.btn-custom:hover {
+    background-color: #4c2d08; /* Darker shade for hover effect */
+}

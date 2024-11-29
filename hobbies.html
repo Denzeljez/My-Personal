@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies</title>
+    <link rel="stylesheet" href="assets/css/hobbies.css">
+    <style>
+        body {
+            background-image: url('assets/img/brown.jpg'); /* Adjust path as needed */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .hobby-details {
+            display: none; /* Keep details hidden by default */
+            margin-top: 10px;
+        }
+
+        .hobby-item {
+            cursor: pointer; /* Indicate clickability for hobby sections */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Explore My Hobbies</h1>
+    </header>
+
+    <main>
+        <section class="hobby-section">
+            <!-- Pencil Sketching Hobby Section -->
+            <div class="hobby-item" onclick="toggleDetails('painting-details')">
+                <img src="assets/img/mata.jpg" alt="Pencil Sketching" class="hobby-image">
+                <div class="hobby-text">
+                    <h2>Pencil Sketching</h2>
+                    <p>Click to see more...</p>
+                </div>
+                <div id="painting-details" class="hobby-details">
+                    <h3>Why I Love Pencil Sketching</h3>
+                    <p>Pencil sketching allows me to express creativity and unwind. From landscapes to abstract designs, it's my way of capturing the beauty around me.</p>
+                    <p>I find peace in the process of shading, blending tones, and creating a story with each delicate stroke of the pencil.</p>
+                </div>
+            </div>
+
+            <!-- Crafting Hobby Section -->
+            <div class="hobby-item" onclick="toggleDetails('crafting-details')">
+                <img src="assets/img/craft.jpg" alt="Crafting" class="hobby-image">
+                <div class="hobby-text">
+                    <h2>Crafting</h2>
+                    <p>Click to see more...</p>
+                </div>
+                <div id="crafting-details" class="hobby-details">
+                    <h3>Why I Love Crafting</h3>
+                    <p>Crafting is my outlet for creativity and relaxation. I specialize in motorcycle seat modifications and restorations, transforming worn or plain seats into stylish, customized designs that make motorcycles look brand new.</p>
+                    <p>Each project is a blend of precision and artistry, turning simple materials into functional and unique pieces. It’s deeply fulfilling to create with my hands, and every restored seat tells its own story, reflecting my passion for quality and detail.</p>
+                </div>
+            </div>
+            <!-- Playing Piano Hobby Section -->
+            <div class="hobby-item" onclick="toggleDetails('piano-details')">
+                <video controls class="hobby-image">
+                    <source src="assets/img/memories.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="hobby-text">
+                    <h2>Playing Piano</h2>
+                    <p>Click to see more...</p>
+                </div>
+                <div id="piano-details" class="hobby-details">
+                    <h3>Why I Love Playing Piano</h3>
+                    <p>Playing the piano allows me to express my emotions and connect with music on a deeper level. Here's a video showcasing some of my favorite performances and pieces I've learned over the years.</p>
+                    <p>Through playing the piano, I've discovered the joy of creativity and the power of music to bring people together.</p>
+                </div>
+            </div>            
+        </section>
+
+        <!-- Centered Back to Profile Link -->
+        <div class="back-to-profile-container">
+            <a href="index.html" class="btn btn-back-to-profile">Back to Profile</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Hobbies. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to toggle visibility of hobby details
+        function toggleDetails(id) {
+            var element = document.getElementById(id);
+            // Toggle visibility of the clicked hobby details
+            if (element.style.display === "none" || element.style.display === "") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

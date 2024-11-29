@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Simple styles for the photos grid */
+        .photos-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .photo {
+            width: 150px; /* Size of photos */
+            height: 150px; /* Size of photos */
+            object-fit: cover; /* Crop photos correctly */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cover Photo Section -->
+    <div class="cover-photo">
+        <img src="Profile.jpg" alt="Profile" class="profile-photo"> <!-- Update with actual image URL -->
+    </div>
+
+    <!-- Profile Name and Actions -->
+    <div class="container mt-4">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="profile-name">Denzel Jezreel Lazo</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu -->
+    <div class="container">
+        <ul class="nav nav-tabs menu">
+            <li class="nav-item">
+                <a class="nav-link active" href="#" id="photos-tab">Photos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="about-tab">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="hobbies-tab">Hobbies</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="business-tab">Business</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="more-tab">More</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Photos Section -->
+    <div class="container" id="photos-section">
+        <h3 class="mt-4">Photos</h3>
+        <div class="photos-grid">
+            <img src="https://via.placeholder.com/150" alt="Photo" class="photo">
+            <img src="https://via.placeholder.com/150" alt="Photo" class="photo">
+            <img src="https://via.placeholder.com/150" alt="Photo" class="photo">
+            <img src="https://via.placeholder.com/150" alt="Photo" class="photo">
+            <img src="https://via.placeholder.com/150" alt="Photo" class="photo">
+            <img src="https://via.placeholder.com/150" alt="Photo" class="photo">
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="container mt-4" id="about-section" style="display: none;">
+        <h3>About</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    <!-- Hobbies Section -->
+    <div class="container mt-4" id="hobbies-section" style="display: none;">
+        <h3>Hobbies</h3>
+        <ul>
+            <li>Photography</li>
+            <li>Traveling</li>
+            <li>Reading</li>
+            <li>Cycling</li>
+            <li>Cooking</li>
+        </ul>
+    </div>
+
+    <!-- Business Section -->
+    <div class="container mt-4" id="business-section" style="display: none;">
+        <h3>Business</h3>
+        <p>Welcome to my business page. Here you can find information about my ventures, services, and professional goals.</p>
+    </div>
+
+    <!-- More Section -->
+    <div class="container mt-4" id="more-section" style="display: none;">
+        <h3>More</h3>
+        <p>Contact me if you have any questions in my life story.</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('about-tab').addEventListener('click', function(event) {
+            event.preventDefault();
+            hideAllSections();
+            document.getElementById('about-section').style.display = 'block';
+            updateActiveTab(this);
+        });
+
+        document.getElementById('photos-tab').addEventListener('click', function(event) {
+            event.preventDefault();
+            hideAllSections();
+            document.getElementById('photos-section').style.display = 'block';
+            updateActiveTab(this);
+        });
+
+        document.getElementById('hobbies-tab').addEventListener('click', function(event) {
+            event.preventDefault();
+            hideAllSections();
+            document.getElementById('hobbies-section').style.display = 'block';
+            updateActiveTab(this);
+        });
+
+        document.getElementById('business-tab').addEventListener('click', function(event) {
+            event.preventDefault();
+            hideAllSections();
+            document.getElementById('business-section').style.display = 'block';
+            updateActiveTab(this);
+        });
+
+        document.getElementById('more-tab').addEventListener('click', function(event) {
+            event.preventDefault();
+            hideAllSections();
+            document.getElementById('more-section').style.display = 'block';
+            updateActiveTab(this);
+        });
+
+        function hideAllSections() {
+            document.getElementById('photos-section').style.display = 'none';
+            document.getElementById('about-section').style.display = 'none';
+            document.getElementById('hobbies-section').style.display = 'none';
+            document.getElementById('business-section').style.display = 'none';
+            document.getElementById('more-section').style.display = 'none';
+        }
+
+        function updateActiveTab(activeTab) {
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            activeTab.classList.add('active');
+        }
+    </script>
+</body>
+</html>

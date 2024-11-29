@@ -1,0 +1,125 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: rgba(255, 255, 255, 0.8); /* Transparent white background */
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    background-color: rgba(42, 42, 42, 0.6); /* Transparent background */
+    color: white;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    backdrop-filter: blur(1px); /* Apply blur effect to background */
+    border-radius: 5%;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+/* Main Content */
+.hobby-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.8); /* Transparent white background */
+    padding: 20px;
+    border-radius: 5px;
+    backdrop-filter: blur(10px); /* Apply blur effect to the background */
+}
+
+.hobby-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7); /* Slightly transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    backdrop-filter: blur(8px); /* Apply blur effect */
+}
+
+.hobby-image,
+.hobby-video {
+    flex: 1 1 300px;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.hobby-text {
+    flex: 2;
+    padding: 20px;
+}
+
+.hobby-text h2 {
+    color: #4CAF50;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.hobby-text p {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px 0;
+    background: rgba(51, 51, 51, 0.7); /* Transparent background */
+    color: white;
+    font-size: 0.9em;
+    border-radius: 10px;
+    backdrop-filter: blur(8px); /* Apply blur effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hobby-item {
+        flex-direction: column;
+    }
+
+    .hobby-text {
+        text-align: center;
+    }
+}
+.btn-back-to-profile {
+    background-color: #785317; /* Set button background color */
+    color: #ffffff;            /* Set button text color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;     /* Remove underline for link */
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;        /* Center text */
+    transition: background-color 0.3s ease;
+}
+.btn-back-to-profile:hover {
+    background-color: #5a4211; /* Darken background color on hover */
+    color: #ffffff; /* Ensure the text stays white */
+}
+.back-to-profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+@media (max-width: 768px) {
+    .btn-back-to-profile {
+        padding: 8px 16px; /* Adjust padding on smaller screens */
+    }
+}

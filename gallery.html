@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            background-image: url('assets/img/brown.jpg'); /* Adjust path as needed */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        /* Style for making the modal body scrollable for smaller images */
+        .modal-body {
+            max-height: 70vh;
+            overflow-y: auto;  /* Prevent scrolling */
+            position: relative;
+        }
+
+        /* Style to ensure image fits within modal and remove scroll when clicked */
+        .modal-body img {
+            width: 100%;
+            height: auto;
+            max-height: 70vh;  /* Limit the image size to avoid overflow */
+            object-fit: contain;  /* Ensure the image fits within the modal */
+        }
+
+        /* Additional styling for the image grid */
+        .img-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .img-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Positioning of the navigation arrows */
+        .nav-arrows {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .prev-arrow {
+            left: 10px;
+        }
+
+        .next-arrow {
+            right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Gallery</h2>
+
+        <!-- Row for Albums -->
+        <div class="row">
+            <!-- Album 1: Tiny Wonders -->
+            <div class="col-md-4 mb-4">
+                <div class="card" data-toggle="modal" data-target="#album1Modal">
+                    <img src="assets/img/tinywonders.jpg" class="card-img-top" alt="Album 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Tiny Wonders</h5>
+                        <p class="card-text">These were the times when I was young.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Album 2: Single Adult -->
+            <div class="col-md-4 mb-4">
+                <div class="card" data-toggle="modal" data-target="#album2Modal">
+                    <img src="assets/img/singleadult.jpg" class="card-img-top" alt="Album 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Single Adult</h5>
+                        <p class="card-text">Reflecting on the experiences of adulthood.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Album 2: The best 2 years -->
+            <div class="col-md-4 mb-4">
+                <div class="card" data-toggle="modal" data-target="#album3Modal">
+                    <img src="assets/img/by.jpg" class="card-img-top" alt="Album 3">
+                    <div class="card-body">
+                        <h5 class="card-title">The best 2 Years</h5>
+                        <p class="card-text">My journey of faith, service, and learning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Album 4: Married life -->
+         <div class="col-md-4 mb-4">
+            <div class="card" data-toggle="modal" data-target="#album4Modal">
+                <img src="assets/img/ml.jpg" class="card-img-top" alt="Album 4">
+                <div class="card-body">
+                    <h5 class="card-title">Married Life</h5>
+                    <p class="card-text">For Time and For All Eternity.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Modal for Album 1: Tiny Wonders -->
+        <div class="modal fade" id="album1Modal" tabindex="-1" role="dialog" aria-labelledby="album1ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="album1ModalLabel">Tiny Wonders</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Scrollable Image Grid -->
+                        <div class="img-grid">
+                            <img src="assets/img/tiny1.jpg" alt="Photo 1" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/tiny6.jpg" alt="Photo 2" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/tiny4.jpg" alt="Photo 3" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/tiny3.jpg" alt="Photo 4" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/tiny5.jpg" alt="Photo 5" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/tiny2.jpg" alt="Photo 6" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/tiny7.jpg" alt="Photo 7" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/tiny8.jpg" alt="Photo 8" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <!-- Add more images as needed -->
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Album 2: Single Adult -->
+        <div class="modal fade" id="album2Modal" tabindex="-1" role="dialog" aria-labelledby="album2ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="album2ModalLabel">Single Adult</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Scrollable Image Grid -->
+                        <div class="img-grid">
+                            <img src="assets/img/sa1.jpg" alt="Photo 1" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/sa2.jpg" alt="Photo 2" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/sa3.jpg" alt="Photo 3" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/sa10.jpg" alt="Photo 4" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/sa11.jpg" alt="Photo 5" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/sa6.jpg" alt="Photo 6" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/sa7.jpg" alt="Photo 7" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/sa8.jpg" alt="Photo 8" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/sa9.jpg" alt="Photo 9" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/sa4.jpg" alt="Photo 10" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/sa5.jpg" alt="Photo 11" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <!-- Add more images as needed -->
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--Modal for Album 3: The best 2 years-->
+        <div class="modal fade" id="album3Modal" tabindex="-1" role="dialog" aria-labelledby="album3ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="album3ModalLabel">The best 2 Years</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Scrollable Image Grid -->
+                        <div class="img-grid">
+                            <img src="assets/img/ml1.jpg" alt="Photo 1" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/ml2.jpg" alt="Photo 2" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/ml3.jpg" alt="Photo 3" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/ml4.jpg" alt="Photo 4" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/ml7.jpg" alt="Photo 5" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/ml6.jpg" alt="Photo 6" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/ml5.jpg" alt="Photo 7" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <img src="assets/img/ml8.jpg" alt="Photo 8" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                            <!-- Add more images as needed -->
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <!--Modal for Album 4: Married Life-->
+                <div class="modal fade" id="album4Modal" tabindex="-1" role="dialog" aria-labelledby="album4ModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="album4ModalLabel">Married Life</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Scrollable Image Grid -->
+                                <div class="img-grid">
+                                    <img src="assets/img/1.jpg" alt="Photo 1" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                                    <img src="assets/img/2.jpg" alt="Photo 2" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                                    <img src="assets/img/3.jpg" alt="Photo 3" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                                    <img src="assets/img/4.jpg" alt="Photo 4" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                                    <img src="assets/img/5.jpg" alt="Photo 5" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                                    <img src="assets/img/6.jpg" alt="Photo 6" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                                    <img src="assets/img/7.jpg" alt="Photo 7" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                                    <img src="assets/img/8.jpg" alt="Photo 8" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                                    <img src="assets/img/9.jpg" alt="Photo 9" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                                    <img src="assets/img/10.jpg" alt="Photo 10" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                                    <img src="assets/img/11.jpg" alt="Photo 11" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                                    <img src="assets/img/12.jpg" alt="Photo 12" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                                    <img src="assets/img/13.jpg" alt="Photo 13" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                                    <img src="assets/img/14.jpg" alt="Photo 14" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                                    <img src="assets/img/15.jpg" alt="Photo 15" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                                    <img src="assets/img/16.jpg" alt="Photo 16" data-toggle="modal" data-target="#imageModal" class="gallery-image">
+                        
+
+                                    <!-- Add more images as needed -->
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        <!-- Modal for Image Preview -->
+        <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Navigation Arrows -->
+                        <i class="nav-arrows prev-arrow">&#10094;</i>
+                        <img id="imagePreview" src="" alt="Preview" class="img-fluid">
+                        <i class="nav-arrows next-arrow">&#10095;</i>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+            <div class="text-center mt-4">
+    <a href="index.html" class="btn btn-back-to-profile">Back to Profile</a>
+</div>
+    <!-- JavaScript dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        var currentImageIndex = 0;
+        var imageArray = [];
+
+        // Gather all the image sources in an array for easy navigation
+        $('.gallery-image').each(function() {
+            imageArray.push($(this).attr('src'));
+        });
+
+        // Display clicked image in the preview modal
+        $(document).on('click', '.gallery-image', function() {
+            currentImageIndex = imageArray.indexOf($(this).attr('src'));
+            $('#imagePreview').attr('src', imageArray[currentImageIndex]);
+        });
+
+        // Navigate to next image
+        $('.next-arrow').on('click', function() {
+            currentImageIndex = (currentImageIndex + 1) % imageArray.length;
+            $('#imagePreview').attr('src', imageArray[currentImageIndex]);
+        });
+
+        // Navigate to previous image
+        $('.prev-arrow').on('click', function() {
+            currentImageIndex = (currentImageIndex - 1 + imageArray.length) % imageArray.length;
+            $('#imagePreview').attr('src', imageArray[currentImageIndex]);
+        });
+
+        // Keyboard navigation (left arrow - previous, right arrow - next)
+        $(document).on('keydown', function(e) {
+            if (e.key === "ArrowLeft") {
+                // Left arrow key
+                currentImageIndex = (currentImageIndex - 1 + imageArray.length) % imageArray.length;
+                $('#imagePreview').attr('src', imageArray[currentImageIndex]);
+            } else if (e.key === "ArrowRight") {
+                // Right arrow key
+                currentImageIndex = (currentImageIndex + 1) % imageArray.length;
+                $('#imagePreview').attr('src', imageArray[currentImageIndex]);
+            }
+        });
+    </script>
+</body>
+</html>
